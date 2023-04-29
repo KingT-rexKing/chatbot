@@ -23,7 +23,7 @@ def index(request):
             sentence = form.cleaned_data['sentence']
 
             # TODO: APIキーのハードコーディングは避ける
-            openai.api_key = "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"
+            openai.api_key = "APIキー"
 
             # ChatGPT
             response = openai.ChatCompletion.create(
