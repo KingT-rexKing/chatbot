@@ -1,17 +1,24 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+
 <html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
 
-<head>
-    <meta charset='utf-8' />
-</head>
-
-<body>
-    <form method="POST">
+  <body>
+    <div id="chat">
+      <form id="chat-form" method="POST">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">ChatGPT</button>
-    </form>
+        <button id="chat-btn" type="submit">ChatGPT</button>
+      </form>
+      <div id="chat-results"></div>
+    </div>
 
-    {{ chat_results }}
-</body>
+    <audio id="voice" controls></audio>
 
+    <script src="{% static 'js/chat.js' %}"></script>
+  </body>
 </html>
